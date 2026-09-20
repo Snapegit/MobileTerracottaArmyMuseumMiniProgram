@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.WenchuangchanpinDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.WenchuangchanpinEntity" id="wenchuangchanpinMap">
+        <result property="chanpinmingcheng" column="chanpinmingcheng"/>
+        <result property="chanpinleixing" column="chanpinleixing"/>
+        <result property="shejiyuansu" column="shejiyuansu"/>
+        <result property="zhuti" column="zhuti"/>
+        <result property="caizhi" column="caizhi"/>
+        <result property="tupian" column="tupian"/>
+        <result property="price" column="price"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.WenchuangchanpinView" >
+
+		SELECT  wenchuangchanpin.* FROM wenchuangchanpin  wenchuangchanpin 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.WenchuangchanpinView" >
+		SELECT * FROM wenchuangchanpin  wenchuangchanpin <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
